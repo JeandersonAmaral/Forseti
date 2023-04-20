@@ -1,11 +1,12 @@
 function loginSenha() {
-    var usuario = document.querySelector('#login');
-    var senha = document.querySelector('#senha');
+    var login = document.querySelector('#login').value;
+    var senha = document.querySelector('#senha').value;
 
-    if ((usuario.value === 'Jeanderson' && senha.value === '123') || (usuario.value === 'Tamyres' && senha.value === '12345')) {
-        window.location.href = "pagina-secreta.html";
+    if ((login === 'Jeanderson' && senha === '123') || (login === 'Tamyres' && senha === '12345')) {
+        window.location.href = "./teste.html";
     } else {
         alert('Usuário ou senha incorretos.\nTente novamente!');
     }
-  }
+}
+
   
