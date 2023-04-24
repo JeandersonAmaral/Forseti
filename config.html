@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_config.css">
+    <link rel="shortcut icon" href="./images/icons/cadeado_icon.svg" type="image/x-icon">
+    <!--Biblioteca externa para barra de carregamento-->
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="./css/style_loading_bar.css">
+    <title>Forseti | Cadastro</title>
+</head>
+
+<body>
+    <figure>
+        <img src="./images/logo_projeto.svg" alt="logo_projeto" class="logo_projeto">
+    </figure>
+    <div class="page_title">
+        <h1></h1>
+    </div>
+    <div class="limite">
+        <form>
+            <div class="janela_1">
+                <h1>Eleição:</h1>
+                <div class="campo_tela_config">
+                    <div class="categoria">
+                        <p>Motivo:</p>
+                    </div>
+                    <input type="text" name="login" id="login"
+                        placeholder="Insira a motivo da votação! Ex.: Representante de turma, presidente do grêmio etc.">
+                </div>
+                <div class="campo_tela_config">
+                    <div class="categoria">
+                        <p>Turma:</p>
+                    </div>
+                    <input type="text" name="senha" id="senha"
+                        placeholder="Insira a identificação da turma: Ex.: Eng. de Software Turma B - 3°P">
+                </div>
+            </div>
+            <div class="janela_2">
+                <h1>Candidato:</h1>
+                <div class="parte_cima">
+                    <div class="content_part_cima">
+                        <div class="campo_tela_config_2">
+                            <div class="categoria">
+                                <p>Nome:</p>
+                            </div>
+                            <input type="text" name="nome_candidato" id="nome_candidato" placeholder="Insira o nome do candidato:">
+                        </div>
+                        <div class="campo_tela_config_2_numero">
+                            <div class="categoria">
+                                <p>N°:</p>
+                            </div>
+                            <input type="number" name="numero_candidato" id="numero_candidato" placeholder="Ex.: 395">
+                        </div>
+                    </div>
+                    <label class="foto" for="input_foto">
+                        <span class="foto_image">
+                            <img src="./images/person.svg" alt="">
+                        </span>
+                    </label>
+                    <input type="file" accept="image/*" id="input_foto">
+                </div>
+                <div class="parte_baixo">
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+    <img src="./images/logo_vassouras.png" alt="logo_vassouras" class="vassouras_logo">
+    <script src="./algoritmo.js"></script>
+</body>
+
+</html>

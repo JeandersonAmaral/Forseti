@@ -1,0 +1,81 @@
+@font-face {
+    font-family:'Bebas';
+    src: url(../font/BebasNeueRegular-gxj83.ttf);
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas';
+}
+
+body{
+    background-color: #333333;
+}
+
+.limite{
+    padding: 20px;
+    display: flex;
+    margin-top: 300px;
+    height: 330px;
+    width: 1000px;
+}
+
+.logo_projeto{
+    position: fixed;
+    top:10px;
+    left: 10px;
+    width: 120px;
+}
+
+
+.caixa_botao{
+    text-align: center;
+    height:300px;
+}
+
+.caixa_botao h2{
+    margin-top: 10px;
+    font-size: 30px;
+    color: aliceblue;
+    font-weight: 300;
+}
+
+
+.botao{
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    outline: 0;
+    border: none;
+    background-color: #1CB78C;
+    font-size: 20px;
+    color: aliceblue;
+    transition: 0.4s;
+}
+
+.botao:hover{
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: #20d8a4;
+    scale: 1.1;
+}
+
+.botao:active{
+    scale: 1;
+}
+
+
+.icone_botao{
+    margin-top: 35px;
+    width: 130px;
+}
+
+.vassouras_logo{
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 220px;
+}
