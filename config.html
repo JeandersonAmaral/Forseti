@@ -10,7 +10,7 @@
     <!--Biblioteca externa para barra de carregamento-->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="./css/style_loading_bar.css">
-    <title>Forseti | Cadastro</title>
+    <title>Forseti | Iniciar</title>
 </head>
 
 <body>
@@ -28,19 +28,25 @@
                     <div class="categoria">
                         <p>Motivo:</p>
                     </div>
-                    <input type="text" name="login" id="login"
+                    <input type="text" name="motivo" id="motivo"
                         placeholder="Insira a motivo da votação! Ex.: Representante de turma, presidente do grêmio etc.">
                 </div>
                 <div class="campo_tela_config">
                     <div class="categoria">
                         <p>Turma:</p>
                     </div>
-                    <input type="text" name="senha" id="senha"
+                    <input type="text" name="turma" id="turma"
                         placeholder="Insira a identificação da turma: Ex.: Eng. de Software Turma B - 3°P">
                 </div>
+                <div class="botoes_janela_cima">
+                    <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg" alt="icone_lixeira"></button>
+                    <input type="button" value="Salvar" class="botao" onclick="exibirMotivo()">
+                </div>
             </div>
+        </form>
+        <form> 
             <div class="janela_2">
-                <h1>Candidato:</h1>
+                <h1>Candidatos:</h1>
                 <div class="parte_cima">
                     <div class="content_part_cima">
                         <div class="campo_tela_config_2">
@@ -49,28 +55,43 @@
                             </div>
                             <input type="text" name="nome_candidato" id="nome_candidato" placeholder="Insira o nome do candidato:">
                         </div>
-                        <div class="campo_tela_config_2_numero">
-                            <div class="categoria">
-                                <p>N°:</p>
+                        <div class="linha_lixeira">
+                            <div class="campo_tela_config_2_numero">
+                                <div class="categoria">
+                                    <p>Idade:</p>
+                                </div>
+                                <input type="number" name="idade" id="idade" placeholder="Ex.: 25">
                             </div>
-                            <input type="number" name="numero_candidato" id="numero_candidato" placeholder="Ex.: 395">
+                            <div class="campo_tela_config_2_numero">
+                                <div class="categoria">
+                                    <p>N°:</p>
+                                </div>
+                                <input type="number" name="numero_candidato" id="numero_candidato" placeholder="Ex.: 395">
+                            </div>
+                            <div class="botoes_janela_baixo">
+                                <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg" alt="icone_lixeira"></button>
+                                <input type="button" value="Salvar" class="botao" onclick="adicionarCandidato()">
+                            </div>
                         </div>
                     </div>
-                    <label class="foto" for="input_foto">
-                        <span class="foto_image">
-                            <img src="./images/person.svg" alt="">
-                        </span>
-                    </label>
-                    <input type="file" accept="image/*" id="input_foto">
                 </div>
                 <div class="parte_baixo">
-                    
+                    <div class="lista_candidatos" id="itens_motivo_turma">
+                    </div>
+                    <!--Div Vazia-->
+                    <div class="lista_candidatos" id="lista_candidatos">
+
+                    </div>
+                    <div class="iniciar">
+                        <button class="iniciar_botao">
+                            INICIAR VOTAÇÃO!
+                        </button>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
-    <img src="./images/logo_vassouras.png" alt="logo_vassouras" class="vassouras_logo">
-    <script src="./algoritmo.js"></script>
+    <script src="./js/algoritmo_iniciar.js"></script>
 </body>
 
 </html>
