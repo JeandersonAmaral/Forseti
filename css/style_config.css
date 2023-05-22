@@ -33,7 +33,7 @@ body{
     text-align: center;
     background-color: #292929;
     width: 650px;
-    height: 170px;
+    height: 200px;
 }
 
 .janela_1 h1{
@@ -45,7 +45,7 @@ body{
 }
 
 
-/*TURMA*/
+/*ELEIÇÃO*/
 
 .campo_tela_config{
     margin-top: 15px;
@@ -98,9 +98,8 @@ body{
 
 
 .botao{
-    margin-top: 30px;
-    width: 300px;
-    height: 35px;
+    width: 100px;
+    height: 30px;
     border-radius: 10px;
     outline: 0;
     border: none;
@@ -122,7 +121,7 @@ body{
 }
 
 .content_part_cima{
-    width: 510px;
+    width: 600px;
 }
 
 
@@ -131,14 +130,9 @@ body{
 .parte_cima{
     display: flex;
     width: 600px;
-    border-style: solid;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-color: aliceblue;
-    border-width: 2px;
     padding-bottom: 20px;
     margin-bottom: 20px;
+
 }
 
 .janela_2{
@@ -160,7 +154,7 @@ body{
 
 .campo_tela_config_2{
     margin-top: 15px;
-    
+    width: 600px;
     display: flex;
     height: 30px;
     transition: 0.4s;
@@ -174,7 +168,7 @@ body{
     border-bottom-right-radius:10px ;
     padding: 8px;
     height: 30px;
-    width: 450px;
+    width: 550px;
     outline: none;
 }
 
@@ -190,16 +184,15 @@ body{
 }
 
 
-/*NUMERO DO CANDIDATO*/
-
+/*NUMERO DO CANDIDATO e IDADE*/
 
 .campo_tela_config_2_numero{
     margin-left:0;
-    margin-top: 15px;
     display: flex;
     height: 30px;
     transition: 0.4s;
     width: 100px;
+    margin-right: 130px;
 }
 
 .campo_tela_config_2_numero input{
@@ -225,31 +218,116 @@ body{
     scale: 1.2;
 }
 
+/*IDADE*/
 
-
-
-/*IMAGEM DO CANDIDATO*/
-
-#input_foto{
-    display: none;
+.campo_tela_config_2_idade{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px ;
+    padding: 8px;
+    width: 80px;
+    height: 30px;
+    outline: none;
 }
 
+/*BOTÃO LIXO*/
 
-.foto_image img{
+.lixo{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    background-color: #1CB78C;
+    transition: 0.4s;
+}
+
+.lixo img{
+    width: 20px;
     margin-left: 5px;
-    margin-top: 5px;
-    width: 90px;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 3px;
-    border-color:aliceblue;
-    background-color: white;
+    margin-right: 5px;
+    margin-top: 2px;
 }
 
-.foto{
+
+.lixo:hover{
     cursor: pointer;
+    transition: 0.4s;
+    background-color: #20d8a4;
+    scale: 1.1;
 }
 
+.lixo:active{
+    scale: 1;
+}
+
+
+.linha_lixeira{
+    width: 600px;
+    margin-top: 15px;
+    height: 30px;
+    display: flex;
+}
+
+
+/*BOTOES*/
+
+.botoes_janela_baixo{
+    display: flex;
+}
+
+.botoes_janela_cima{
+    width: 600px;
+    padding-left: 460px;
+    display: flex;
+    margin-top: 15px;
+
+}
+
+/*LISTA*/
+
+.parte_baixo{
+    margin-top: 20px;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-color: aliceblue;
+    border-width: 2px;
+}
+
+
+.lista_candidatos{
+    font-size: large;
+    color: aliceblue;
+}
+
+.iniciar{
+    display: flex;
+    width: 600px;
+    height: 50px;
+}
+
+.iniciar_botao{
+    margin-top: 20px;
+    background-color: #1CB78C;
+    color: aliceblue;
+    width: 120px;
+    height: 30px;
+    border: none;
+    font-size: large;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.iniciar_botao:hover{
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: #20d8a4;
+    scale: 1.1;
+}
 
 .vassouras_logo{
     position:absolute;
