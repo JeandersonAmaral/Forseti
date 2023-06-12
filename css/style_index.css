@@ -1,0 +1,156 @@
+@font-face {
+    font-family:'Bebas';
+    src: url(../font/BebasNeueRegular-gxj83.ttf);
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas';
+}
+
+body{
+    background-color: #333333;
+}
+
+.limite{
+    padding-bottom: 50px;
+    width: 1280px;
+}
+
+.caixa_logo{
+    text-align: center;
+    padding: 30px;
+    width: 400px;
+    height: 300px;
+}
+
+.caixa_logo img{
+    margin-top: 120px;
+    width: 180px;
+}
+
+
+.janela{
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #292929;
+    width: 350px;
+    height: 300px;
+}
+
+.janelinha{
+    position: relative;
+    top: -40px;
+}
+
+.cadeado_icon{
+    position: relative;
+    top: -60px;
+    width: 75px;
+}
+
+.cadeado_icon img{
+    width: 75px;
+}
+
+.janela h2{
+    font-weight: 300;
+    color: aliceblue;
+    font-size: 17px;
+}
+
+.campo_tela_login{
+    margin-top: 30px;
+    width: 300px;
+    display: flex;
+    height: 35px;
+    transition: 0.4s;
+}
+
+
+.campo_tela_login input{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px ;
+    padding: 8px;
+    margin-bottom: 30px;
+    height: 35px;
+    width: 300px;
+    outline: none;
+}
+
+.campo_tela_login figure{
+    padding: 4px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px ;
+    width: 55px;
+    background-color: #1CB78C;
+}
+
+.campo_tela_login figure img{
+    width: 25px;
+}
+
+
+.campo_tela_login input::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #D4D4D4;
+}
+
+.campo_tela_login:hover{
+    transition: 0.4s;
+    scale: 1.1;
+}
+
+
+.botao{
+    margin-top: 30px;
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    outline: 0;
+    border: none;
+    background-color: #1CB78C;
+    font-size: 20px;
+    color: aliceblue;
+    transition: 0.4s;
+}
+
+.botao:hover{
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: #20d8a4;
+    scale: 1.1;
+}
+
+.botao:active{
+    scale: 1;
+}
+
+.vassouras_logo{
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 220px;
+}
+
+
+.loading{
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.loading p{
+    font-size: 24px;
+}
