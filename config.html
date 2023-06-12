@@ -10,7 +10,10 @@
     <!--Biblioteca externa para barra de carregamento-->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="./css/style_loading_bar.css">
-    <title>Forseti | Iniciar</title>
+    <!--Biblioteca externa para gerar PDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+    <title>Forseti | Votação</title>
 </head>
 
 <body>
@@ -22,14 +25,14 @@
     </div>
     <div class="limite">
         <form>
-            <div class="janela_1">
+            <div class="janela_1" id="janela_1">
                 <h1>Eleição:</h1>
                 <div class="campo_tela_config">
                     <div class="categoria">
                         <p>Motivo:</p>
                     </div>
                     <input type="text" name="motivo" id="motivo"
-                        placeholder="Insira a motivo da votação! Ex.: Representante de turma, presidente do grêmio etc.">
+                        placeholder="Insira o motivo da votação! Ex.: Representante de turma, presidente do grêmio etc.">
                 </div>
                 <div class="campo_tela_config">
                     <div class="categoria">
@@ -39,21 +42,23 @@
                         placeholder="Insira a identificação da turma: Ex.: Eng. de Software Turma B - 3°P">
                 </div>
                 <div class="botoes_janela_cima">
-                    <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg" alt="icone_lixeira"></button>
-                    <input type="button" value="Salvar" class="botao" onclick="exibirMotivo()">
+                    <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg"
+                            alt="icone_lixeira"></button>
+                    <input type="button" value="Cadastrar" class="botao" onclick="exibirMotivo()">
                 </div>
             </div>
         </form>
-        <form> 
-            <div class="janela_2">
+        <div class="janela_2">
+            <form>
                 <h1>Candidatos:</h1>
-                <div class="parte_cima">
+                <div class="parte_cima" id="parte_cima">
                     <div class="content_part_cima">
                         <div class="campo_tela_config_2">
                             <div class="categoria">
                                 <p>Nome:</p>
                             </div>
-                            <input type="text" name="nome_candidato" id="nome_candidato" placeholder="Insira o nome do candidato:">
+                            <input type="text" name="nome_candidato" id="nome_candidato"
+                                placeholder="Insira o nome do candidato:">
                         </div>
                         <div class="linha_lixeira">
                             <div class="campo_tela_config_2_numero">
@@ -66,32 +71,64 @@
                                 <div class="categoria">
                                     <p>N°:</p>
                                 </div>
-                                <input type="number" name="numero_candidato" id="numero_candidato" placeholder="Ex.: 395">
+                                <input type="number" name="numero_candidato" id="numero_candidato"
+                                    placeholder="Ex.: 395">
                             </div>
                             <div class="botoes_janela_baixo">
-                                <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg" alt="icone_lixeira"></button>
-                                <input type="button" value="Salvar" class="botao" onclick="adicionarCandidato()">
+                                <button type="reset" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg"
+                                        alt="icone_lixeira"></button>
+                                <input type="button" value="Cadastrar" class="botao" onclick="adicionarCandidato()">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="parte_baixo">
-                    <div class="lista_candidatos" id="itens_motivo_turma">
-                    </div>
-                    <!--Div Vazia-->
-                    <div class="lista_candidatos" id="lista_candidatos">
+            </form>
+            <div class="parte_baixo" id="parte_baixo">
+                <!--Divs Vazias-->
+                <div class="motivo_turma" id="itens_motivo_turma">
 
-                    </div>
-                    <div class="iniciar">
-                        <button class="iniciar_botao">
-                            INICIAR VOTAÇÃO!
-                        </button>
-                    </div>
+                </div>
+                <div class="lista_candidatos" id="lista_candidatos">
+
                 </div>
             </div>
-        </form>
+            <div class="iniciar" id="iniciar">
+                <button class="iniciar_botao" onclick="esconderDivs()">Iniciar</button>
+            </div>
+        </div>
     </div>
-    <script src="./js/algoritmo_iniciar.js"></script>
+    <div>
+        <div class="janela_3" id="janela_3">
+            <h1>Votar:</h1>
+            <div class="campo_tela_config">
+                <div class="categoria_vota">
+                    <p>Matricula:</p>
+                </div>
+                <input type="number" name="matricula" id="matricula" placeholder="Insira o número da sua matrícula:">
+            </div>
+            <div class="campo_tela_config">
+                <div class="categoria_vota">
+                    <p>N° do candidato:</p>
+                </div>
+                <input type="number" name="numero_candidato_vota" id="numero_candidato_vota"
+                    placeholder="Insira o número do candidato">
+            </div>
+            <div class="botoes_janela_cima">
+                <button onclick="limparCampos()" class="lixo" id="lixo"><img src="./images/icons/lixo_icon.svg"
+                        alt="icone_lixeira"></button>
+                <input type="button" value="Votar" class="botao" onclick="realizarVoto()">
+            </div>
+        </div>
+        <div class="janela_4" id="janela_4">
+            <div id="resultado_votos" class="resultado">
+                <h1>Resultado:</h1>
+            </div>
+            <button class="printer" id="printer" onclick="gerarPDF()"><img src="./images/icons/printer_icon.svg"
+                alt="icone_lixeira"></button>
+        </div>
+    </div>
+    <script src="./js/algoritmo.js" ></script>
+    <script src="./js/gerar_PDF.js" ></script>
 </body>
 
 </html>
